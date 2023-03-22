@@ -1,0 +1,33 @@
+<div>
+  <form  #loginForm="ngForm" (ngSubmit)="loginUser(loginForm.value)" novalidate>
+  
+  <label id="fname">first Name</label>
+  <input type="text" id="fname" name="fname"  ngModel #fname="ngModel" required >
+  <span class="text-danger" *ngIf="fname.touched && fname.invalid" >
+  Name is required
+  </span>
+  <label id="lname">last Name</label>
+  <input type="text" id="lname" name="lname"ngModel #lname="ngModel" required >
+  <span class="text-danger" *ngIf="lname.touched && lname.invalid">
+  lastName is required
+  </span>
+  <label id="email">email</label>
+  <input type="text" id="email" name="email"ngModel #email="ngModel" required >
+  <span class="text-danger" *ngIf="email.touched && email.invalid">
+    Email is required
+    </span>
+  <label for="password">Password</label>
+  <input type="text" id="password" name="password" ngModel #password="ngModel"  required >
+  <span class="text-danger" *ngIf="password.touched && password.invalid">
+    password is required
+    </span>
+  <label for="confirmpassword">Confirm password</label>
+  <input type="text" id="confirmpassword" name="confirmpassword" ngModel #confirmpassword="ngModel" required>
+  <span class="text-danger" *ngIf="confirmpassword.touched && confirmpassword.invalid">
+    ConFirmpassword is required
+    </span>
+  <!-- <input type="input" formControlName="address" >
+  <button formControlName="address" (click)="addAddress()">add</button> -->
+  <button type="submit" class="btn btn-default" [disabled]="!loginForm.valid">Submit</button>
+  </form>
+  </div>
